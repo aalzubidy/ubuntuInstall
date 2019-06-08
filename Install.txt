@@ -62,3 +62,7 @@ sudo apt install gnome-tweak-tool
 
 #Spotify
 sudo snap install spotify
+
+#Disable screen rotation
+gsettings set org.gnome.settings-daemon.peripherals.touchscreen orientation-lock true
+gsettings set org.gnome.settings-daemon.plugins.orientation active false
