@@ -65,4 +65,19 @@ echo "Disable Screen Rotation"
 gsettings set org.gnome.settings-daemon.peripherals.touchscreen orientation-lock true
 gsettings set org.gnome.settings-daemon.plugins.orientation active false
 
+
+#Brave
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+source /etc/os-release
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ $UBUNTU_CODENAME main" | sudo tee /etc/apt/sources.list.d/brave-browser-release-${UBUNTU_CODENAME}.list
+sudo apt update
+sudo apt install brave-browser
+
+#Git
+apt-get install git-core
+
+#NodeJS
+curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 echo "Done!"
